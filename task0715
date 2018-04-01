@@ -22,6 +22,9 @@
 
 5. Выведи элементы списка на экран, каждый с новой строки.
 
+
+//Задача успешно прошла тестирование!
+
 package com.javarush.task.task07.task0715;
 
 import java.util.ArrayList;
