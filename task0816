@@ -1,0 +1,55 @@
+Добрая Зинаида и летние каникулы
+
+Создать словарь (Map<String, Date>) и занести в него десять записей по принципу: "фамилия" - "дата рождения".
+Удалить из словаря всех людей, родившихся летом.
+
+Требования:
+1.Программа не должна выводить текст на экран.
+2.Программа не должна считывать значения с клавиатуры.
+3.Метод createMap() должен создавать и возвращать словарь HashMap с типом элементов String, Date состоящий из 10 записей.
+4.Метод removeAllSummerPeople() должен удалять из словаря всех людей, родившихся летом.
+
+package com.javarush.task.task08.task0816;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.*;
+
+/* 
+Добрая Зинаида и летние каникулы
+*/
+
+public class Solution {
+    public static HashMap<String, Date> createMap() {
+        HashMap<String, Date> map = new HashMap<String, Date>();
+        map.put("Stallone", new Date("JANUARY 1 1980"));
+        map.put("Маша", new Date("JUNE 1 1980"));
+        map.put("Даша", new Date("JUNE 1 1980"));
+        map.put("Саша", new Date("JANUARY 1 1980"));
+        map.put("Марина", new Date("JUNE 1 1980"));
+        map.put("Женя", new Date("JUNE 1 1980"));
+        map.put("Сережа", new Date("JUNE 1 1980"));
+        map.put("Вася", new Date("JANUARY 1 1980"));
+        map.put("Леша", new Date("JUNE 1 1980"));
+        map.put("Петя", new Date("JUNE 1 1980"));
+
+        return map;
+        
+    }
+
+    public static void removeAllSummerPeople(HashMap<String, Date> map) {
+       
+        Iterator<Date> itrerator = map.values().iterator();
+        while (itrerator.hasNext()){
+            Date date = itrerator.next();
+            if (date.getMonth() > 4 && date.getMonth() < 8)
+                itrerator.remove();
+        }
+
+    }
+
+    public static void main(String[] args) {
+        HashMap map = createMap();
+        removeAllSummerPeople(map);
+    }
+}
